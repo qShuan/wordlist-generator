@@ -22,13 +22,17 @@ def first(f):
 		f.write(keyword[0] + "_" + keyword[i+1]+ '\n')
 		
 		for k in range(1, len(keyword) + 1):
+			#Frist + other with underscore
 			f.write(keyword[0] + keyword[i+1] + "_" + keyword[value-k-i]+ '\n')
+			f.write(keyword[0] + "_" + keyword[i+1] + keyword[value-k-i]+ '\n')
+			#First + others
+			f.write(keyword[0] + keyword[i+1] + keyword[value-k-i]+ '\n')
 		
 		#LAST REVERSED
 		f.write(keyword[0] + keyword[i+1][::-1]+ '\n')
 		f.write(keyword[0] + "_" + keyword[i+1][::-1]+ '\n')	
 		
-		for k in range(1, len(keyword) + 1):
+		for k in range(1, len(keyword) + 1):		
 			#Underscore first
 			f.write(keyword[0] + "_" + keyword[i+1][::-1] + keyword[value-k-i]+ '\n')
 			f.write(keyword[0] + "_" + keyword[i+1] + keyword[value-k-i][::-1]+ '\n')
@@ -56,7 +60,11 @@ def last(f):
 		f.write(keyword[value-1] + "_" + keyword[k-1]+ '\n')
 		
 		for l in range(0, len(keyword)):
+			#Frist + other with underscore
 			f.write(keyword[value-1] + keyword[k-1] + "_" + keyword[0 + l]+ '\n')
+			f.write(keyword[value-1] + "_" + keyword[k-1] + keyword[0 + l]+ '\n')
+			#First + others
+			f.write(keyword[value-1] + keyword[k-1] + keyword[0 + l]+ '\n')
 		
 		#FIRST REVERSED
 		f.write(keyword[value-1][::-1] + keyword[k-1]+ '\n')
@@ -92,6 +100,10 @@ def iteratively(f):
 		for k in range(1, len(keyword) + 1):
 			#Underscore first
 			f.write(keyword[i] + "_" + keyword[i+1] + keyword[value-k-i]+ '\n')
+			#Underscore second
+			f.write(keyword[i] + keyword[i+1] + "_" + keyword[value-k-i]+ '\n')
+			#The "i" index + others
+			f.write(keyword[i] + keyword[i+1] + keyword[value-k-i]+ '\n')
 		
 		#FIRST REVERSED
 		f.write(keyword[i][::-1] + keyword[i+1]+ '\n')
@@ -124,7 +136,12 @@ def iteratively(f):
 		f.write(keyword[k] + "_" + keyword[k-1]+ '\n')
 		
 		for l in range(0, len(keyword)):
+			#Underscore first
+			f.write(keyword[k] + "_" + keyword[k-1] + keyword[0 + l]+ '\n')
+			#Underscore second
 			f.write(keyword[k] + keyword[k-1] + "_" + keyword[0 + l]+ '\n')
+			#The "k" index + others
+			f.write(keyword[k] + keyword[k-1] + keyword[0 + l]+ '\n')
 		
 		#FIRST REVERSED
 		f.write(keyword[k][::-1] + keyword[k-1]+ '\n')
@@ -181,7 +198,11 @@ def all_reverse(f):
 			f.write(keyword[value-1][::-1] + keyword[k-1][::-1] + "_" + keyword[0+l][::-1]+ '\n')
 		k-=1
 
-#WRITING TO THE FILE
+#first()
+#last()
+#iteratively()
+#all_reverse()
+
 with open('wordlist.txt', 'w') as f:
 	first(f)
 	last(f)
