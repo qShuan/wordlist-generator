@@ -89,6 +89,26 @@ for x in range(0, len(keyword)):
 			print("##### ` - Not reversing to avoid duplicates #####")
 		case '~':
 			print("##### ~ - Not reversing to avoid duplicates #####")
+		case '0':
+			print("##### Not reversing to avoid duplicates #####")
+		case "1":
+			print("##### NUMBER - Not reversing to avoid duplicates #####")
+		case "2":
+			print("##### NUMBER - Not reversing to avoid duplicates #####")
+		case "3":
+			print("##### NUMBER - Not reversing to avoid duplicates #####")
+		case "4":
+			print("##### NUMBER - Not reversing to avoid duplicates #####")
+		case "5":
+			print("##### NUMBER - Not reversing to avoid duplicates #####")
+		case "6":
+			print("##### NUMBER - Not reversing to avoid duplicates #####")
+		case "7":
+			print("##### NUMBER - Not reversing to avoid duplicates #####")
+		case "8":
+			print("##### NUMBER - Not reversing to avoid duplicates #####")
+		case "9":
+			print("##### NUMBER - Not reversing to avoid duplicates #####")
 		case _:
 			keyword_rev.append(keyword[x][::-1])
 	
@@ -116,4 +136,5 @@ f = open('wordlist.txt', 'w')
 #Make combinations
 for i in range(0, len(keyword) + 1):
 	for group in permutations(keyword, i):
-		print(''.join(group), file = f)			
+		print(''.join(group), file = f)
+			
