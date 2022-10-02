@@ -1,6 +1,7 @@
 from itertools import permutations
 import sys
 
+
 #Make a list
 keyword = []
 keyword_rev = []
@@ -9,6 +10,7 @@ keyword_rev = []
 print('\n')
 print("##### With special characters #####")
 print("##### Type 'run' to run the program #####")
+print("##### Be careful of adding too many values - the file is going to be very big #####")
 print('\n')
 
 #Add words to the list
@@ -137,4 +139,3 @@ f = open('wordlist.txt', 'w')
 for i in range(0, len(keyword) + 1):
 	for group in permutations(keyword, i):
 		print(''.join(group), file = f)
-			
