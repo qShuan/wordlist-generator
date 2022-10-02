@@ -112,8 +112,8 @@ while(run != True):
 		print("Closing...")
 		sys.exit()
 		
-
+f = open('wordlist.txt', 'w')
 #Make combinations
 for i in range(0, len(keyword) + 1):
 	for group in permutations(keyword, i):
-     		print(''.join(group))
+		print(''.join(group), file = f)			
